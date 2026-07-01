@@ -112,10 +112,6 @@ Project Name
 
 GrapheneAll White-label Sales Sheet
 
-Owner
-
-S001 Proposal Engineer
-
 Location
 
 knowledge/cases/P001_GrapheneAll/
