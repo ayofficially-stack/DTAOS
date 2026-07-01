@@ -37,7 +37,7 @@ Sprint 3
 
 ---
 
-## In Progress
+## Sprint Focus
 
 Sprint 3
 
@@ -79,13 +79,9 @@ Dashboard : ⚪
 
 ## Current Decisions
 
-- Skill = AI Employee
-- Prompt belongs inside Skill
-- GitHub is the Source of Truth
-- ChatGPT/Claude/Gemini are Execution Engines
 - Architecture is Frozen
-- HTML is an intermediate prototype when creating editable marketing assets
-- Editable PPT is the preferred production deliverable for sales materials
+- GitHub is the Source of Truth
+- Skill = AI Employee
 
 ---
 
@@ -97,7 +93,48 @@ None
 
 ## Latest Lessons
 
-- L001 Editorial Workflow
+- knowledge/lessons/Editorial/L001_Editorial_Workflow.md
+
+## Latest Decisions
+
+- knowledge/lessons/decisions/D001_Editable_PPT.md
+- knowledge/lessons/decisions/D002_GitHub_Source_of_Truth.md
+- knowledge/lessons/decisions/D003_HTML_Prototype.md
+
+
+## Active Project
+
+Project ID
+
+P001
+
+Project Name
+
+GrapheneAll White-label Sales Sheet
+
+Owner
+
+S001 Proposal Engineer
+
+Location
+
+knowledge/cases/P001_GrapheneAll/
+
+Status
+
+In Progress
+
+Priority
+
+Highest
+
+Current Stage
+
+Editable PPT Review & Refinement
+
+Resume Action
+
+Continue from "Editable PPT Review & Refinement".
 
 ---
 
