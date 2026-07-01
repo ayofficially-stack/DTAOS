@@ -127,6 +127,8 @@ Always continue from the latest validated state.
 - Restore Architecture
 - Restore Design Rules
 - Restore Open Decisions
+- Read Latest Decisions
+- Read Latest Lessons
 
 Then continue the latest unfinished task.
 
