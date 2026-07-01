@@ -95,17 +95,18 @@ If Lessons Learned exists, it becomes part of the operating rules for the curren
 
 ---
 
-# # Resume Context
+# Resume Context
 
 Recover the project state in the following order.
 
 1. Project Status
 2. Latest Decisions
 3. Latest Lessons
-4. Rejected Approaches
-5. Preferred Workflow
-6. Preferred Deliverable
-7. Pending Tasks
+4. Active Project Case
+5. Rejected Approaches
+6. Preferred Workflow
+7. Preferred Deliverable
+8. Pending Tasks
 
 Never recreate an approved solution.
 
@@ -142,6 +143,24 @@ During boot:
 - Verify document versions.
 - Report version mismatches.
 - Recommend synchronization before continuing.
+
+---
+
+
+---
+
+# Repository Access
+
+DTAOS assumes that the AI can access the repository defined for the current session.
+
+If repository access is unavailable:
+
+- Report the limitation immediately.
+- Do not fabricate recovery results.
+- Recover only from documents that are actually accessible.
+- Clearly identify any missing files or unavailable content.
+
+GitHub remains the Source of Truth.
 
 ---
 
