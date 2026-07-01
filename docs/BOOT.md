@@ -16,7 +16,7 @@
 
 # Current Version
 
-DTAOS v0.1
+DTAOS v0.2
 
 ---
 
@@ -42,11 +42,15 @@ Build the first AI Employee (S001 Proposal)
 
 Read in the following order.
 
-1. PRINCIPLES.md
-2. ARCHITECTURE.md
-3. PROJECT_STATUS.md
-4. S001 README
-5. S001 skill.md
+1 PRINCIPLES.md
+
+2 PROJECT_STATUS.md
+
+3 ARCHITECTURE.md
+
+4 README.md
+
+5 Skill.md
 
 ---
 
@@ -77,10 +81,57 @@ automation/
 When starting a new AI session, use the following instruction.
 
 "DTAOS를 시작합니다.
-BOOT.md와 PROJECT_STATUS.md를 기준으로 현재 상태를 복원한 뒤 작업을 이어갑니다."
+
+BOOT.md를 기준으로 DTAOS를 초기화합니다.
+
+PROJECT_STATUS.md를 확인하여 현재 프로젝트 상태를 복원합니다.
+
+If Lessons Learned exists, it becomes part of the operating rules for the current session.
+
+이전 승인 사항과 거부된 방향을 복원한 뒤 작업을 이어갑니다."
 
 ---
 
-Version : v1.0
+# Resume Context
+
+Before continuing a project, recover the following information.
+
+1. Latest approved decisions
+
+2. Lessons learned from previous iterations
+
+3. Rejected approaches
+
+4. Preferred workflow
+
+5. Preferred deliverable
+
+6. Pending tasks
+
+Never repeat a previously rejected solution.
+
+Never recreate an approved solution.
+
+Always continue from the latest validated state.
+
+---
+
+# Startup Checklist
+
+- Restore Project Status
+- Restore Current Sprint
+- Restore Active Tasks
+- Restore AI Employees
+- Restore Architecture
+- Restore Design Rules
+- Restore Open Decisions
+
+Then continue the latest unfinished task.
+
+
+---
+
 
 Status : Active
+
+Last Updated: 2026-07-02
