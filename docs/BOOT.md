@@ -181,6 +181,8 @@ If repository access is unavailable:
 - Recover only from documents that are actually accessible.
 - Clearly identify any missing files or unavailable content.
 
+Never infer that a referenced document is empty unless it has actually been read.
+
 GitHub remains the Source of Truth.
 
 ---
