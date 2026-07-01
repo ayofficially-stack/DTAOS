@@ -103,6 +103,12 @@ Recover the project state in the following order.
 2. Latest Decisions
 3. Latest Lessons
 4. Active Project Case
+   - README.md
+   - PROJECT_CONTEXT.md
+   - DECISIONS.md
+   - REVIEW.md
+   - OUTPUTS.md
+   - PROJECT_LOG.md
 5. Rejected Approaches
 6. Preferred Workflow
 7. Preferred Deliverable
@@ -113,6 +119,20 @@ Never recreate an approved solution.
 Never repeat rejected approaches.
 
 Always continue from the latest validated state.
+
+Recovery Rules
+
+When Latest Decisions or Latest Lessons reference one or more files,
+
+read every referenced file before continuing.
+
+When an Active Project Case exists,
+
+read every project document in the case folder before continuing.
+
+Never assume the contents.
+
+Recover only from the referenced documents.
 
 
 ---
@@ -130,6 +150,7 @@ Always continue from the latest validated state.
 - Restore Open Decisions
 - Read Latest Decisions
 - Read Latest Lessons
+- Read Active Project Case
 
 Then continue the latest unfinished task.
 
