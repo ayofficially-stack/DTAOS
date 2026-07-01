@@ -95,6 +95,12 @@ None
 
 ---
 
+## Latest Lessons
+
+- L001 Editorial Workflow
+
+---
+
 ## Last Update
 
 2026-07-02
