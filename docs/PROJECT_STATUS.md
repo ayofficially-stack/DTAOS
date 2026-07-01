@@ -101,6 +101,9 @@ None
 - knowledge/lessons/decisions/D002_GitHub_Source_of_Truth.md
 - knowledge/lessons/decisions/D003_HTML_Prototype.md
 
+## Latest Cases
+
+- knowledge/cases/P001_GrapheneAll/README.md
 
 ## Active Project
 
@@ -114,7 +117,7 @@ GrapheneAll White-label Sales Sheet
 
 Location
 
-knowledge/cases/P001_GrapheneAll/
+knowledge/cases/P001_GrapheneAll/README.md
 
 Status
 
