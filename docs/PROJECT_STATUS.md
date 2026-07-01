@@ -4,7 +4,7 @@
 
 ## Current Version
 
-v0.1
+v0.2
 
 ---
 
@@ -84,6 +84,8 @@ Dashboard : ⚪
 - GitHub is the Source of Truth
 - ChatGPT/Claude/Gemini are Execution Engines
 - Architecture is Frozen
+- HTML is an intermediate prototype when creating editable marketing assets
+- Editable PPT is the preferred production deliverable for sales materials
 
 ---
 
@@ -95,4 +97,4 @@ None
 
 ## Last Update
 
-2026-07-01
+2026-07-02

@@ -131,6 +131,16 @@ Then continue the latest unfinished task.
 
 ---
 
+## Version Check
+
+During boot:
+
+- Verify document versions.
+- Report version mismatches.
+- Recommend synchronization before continuing.
+
+---
+
 
 Status : Active
 
