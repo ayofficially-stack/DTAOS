@@ -12,47 +12,37 @@
 
 새로운 대화를 시작할 경우 가장 먼저 이 문서를 확인한다.
 
----
+The goal of BOOT is not to initialize DTAOS.
 
-# Current Version
-
-DTAOS v0.2
+The goal of BOOT is to resume DTAOS from its latest validated state.
 
 ---
 
-# Current Phase
+# Current Execution State
 
-Foundation Build
-
----
-
-# Current Sprint
-
-Sprint 3
-
----
-
-# Current Focus
-
-Build the first AI Employee (S001 Proposal)
+Managed by NEXT.md
 
 ---
 
 # Core Documents
 
-Read in the following order.
-
 1 PRINCIPLES.md
 
-2 PROJECT_STATUS.md
+2 ARCHITECTURE.md
 
-3 ARCHITECTURE.md
+3 Specification/Documentation.md
 
-4 README.md
+4 Specification/Boot_Recovery.md
 
-5 Current Skill README
+5 NEXT.md
 
-6 Current Skill File
+6 PROJECT_STATUS.md
+
+7 README.md
+
+8 Current Skill README
+
+9 Current Skill File
 
 ---
 
@@ -72,10 +62,14 @@ automation/
 
 - Follow DTAOS Principles.
 - Follow current Architecture.
-- Review PROJECT_STATUS before starting.
+- Restore the current execution state from NEXT.md before reading PROJECT_STATUS.md.
 - Do not change architecture without approval.
 - Update CHANGELOG when major changes occur.
 - Decisions override newly generated assumptions.
+- Read only existing files.
+- Never infer Resume Action.
+- Resume from NEXT.md.
+- Load only knowledge related to the active project.
 
 ---
 
@@ -87,7 +81,13 @@ When starting a new AI session, use the following instruction.
 
 BOOT.md를 기준으로 DTAOS를 초기화합니다.
 
-PROJECT_STATUS.md를 확인하여 현재 프로젝트 상태를 복원합니다.
+NEXT.md를 확인하여
+
+현재 Execution State를 복원합니다.
+
+그 이후 PROJECT_STATUS.md를 확인하여
+
+현재 프로젝트를 복원합니다. 
 
 If Lessons Learned exists, it becomes part of the operating rules for the current session.
 
@@ -99,20 +99,22 @@ If Lessons Learned exists, it becomes part of the operating rules for the curren
 
 Recover the project state in the following order.
 
-1. Project Status
-2. Latest Decisions
-3. Latest Lessons
-4. Active Project Case
+1. Execution State (NEXT.md)
+2. Project Status
+3. Latest Decisions
+4. Latest Lessons
+5. Active Project Case
    - README.md
    - PROJECT_CONTEXT.md
    - DECISIONS.md
    - REVIEW.md
    - OUTPUTS.md
    - PROJECT_LOG.md
-5. Rejected Approaches
-6. Preferred Workflow
-7. Preferred Deliverable
-8. Pending Tasks
+6. Related Lessons
+7. Related Technology
+8. Related Templates
+9. Rejected Approaches
+10. Pending Tasks
 
 Never recreate an approved solution.
 
@@ -120,7 +122,10 @@ Never repeat rejected approaches.
 
 Always continue from the latest validated state.
 
-Recovery Rules
+---
+
+
+# Recovery Rules
 
 When Latest Decisions or Latest Lessons reference one or more files,
 
@@ -134,13 +139,19 @@ Never assume the contents.
 
 Recover only from the referenced documents.
 
+Read only documents required for
+the active project.
+
+Do not restore unrelated knowledge.
+
 
 ---
 
-# Startup Checklist
+## Startup Checklist
 
+- Restore Current Execution State
 - Restore Project Status
-- Restore Current Sprint
+- Restore Resume Action
 - Restore Latest Decisions
 - Restore Latest Lessons
 - Restore Active Tasks
@@ -148,8 +159,6 @@ Recover only from the referenced documents.
 - Restore Architecture
 - Restore Design Rules
 - Restore Open Decisions
-- Read Latest Decisions
-- Read Latest Lessons
 - Read Active Project Case
 
 Then continue the latest unfinished task.
