@@ -1,29 +1,25 @@
 # P001 GrapheneAll White-label Sales Sheet
 
-Project ID
-
-P001
-
 Status
 
 In Progress
 
 Current Stage
 
-Editable PPT Review & Refinement
+Editorial QA (Revision R1)
+
+Current Output
+
+A02 Editable PPT (KR/EN)
 
 Priority
 
 Highest
 
-Last Update
-
-2026-07-02
-
-Current Output
-
-A02 Editable PPT
-
 Next Action
 
-Continue Editable PPT Review & Refinement
+Review A02 Editable PPT and produce Revision R1.
+
+Last Updated
+
+2026-07-02

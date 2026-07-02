@@ -1,13 +1,13 @@
 ## v0.2
 
-Added
+## Added
 
-Boot Resume Context
+- L001 Editorial Workflow
+- Resume Context
+- Lessons Recovery
+- Editorial Workflow Standard
 
-Lessons Learned support
+## Changed
 
-Experience-based project continuation
-
-Editorial workflow standard
-
-Prototype → QA → PPT production workflow
+- Boot recovery process
+- Project continuation workflow

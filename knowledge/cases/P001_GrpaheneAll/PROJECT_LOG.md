@@ -1,19 +1,13 @@
-# Lesson
+2026-07-02
 
-Project
+### Completed
 
-GrapheneAll White-label Sales Sheet
+- HTML Prototype completed.
+- Editorial QA completed.
+- Claude generated KR Editable PPT.
+- Claude generated EN Editable PPT.
+- OUTPUTS.md updated.
 
-Finding
+### Current
 
-HTML should be treated as a prototype.
-
-Editable PPT should be the production format.
-
-Reason
-
-...
-
-Decision
-
-...
+- Revision R1 QA started.

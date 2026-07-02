@@ -4,27 +4,18 @@
 
 Define the standard storytelling structure for B2B technical communication.
 
----
-
-## Context
-
-Validated during the GrapheneAll White-label Sales Sheet project (P001).
-
-Applicable to proposals, sales materials, IR decks, conference presentations, and technical documents.
+The objective is to communicate technical value in a way that is easy for decision makers to understand.
 
 ---
 
-## Problem
+## Rule
 
-Technical documents often explain the technology first.
+Do not start with technology.
 
-However, decision makers are more interested in the problem being solved than the technology itself.
+Start with the customer's problem.
 
----
-
-## Finding
-
-Understanding improves significantly when the story begins with the customer's problem rather than the technical solution.
+Technology is the answer,
+not the beginning of the story.
 
 ---
 
@@ -46,23 +37,17 @@ Business Value
 
 ---
 
-## Standard Rule
-
-Do not start with technology.
-
-Start with the customer's problem.
-
-Technology is the answer, not the beginning of the story.
-
----
-
 ## Why
 
-People do not buy technology.
+Decision makers are interested in solving problems, not understanding technology first.
 
-They buy a solution to their problem.
+Starting with the customer's problem creates context.
 
-Presenting the problem first creates context for understanding the value of the technology.
+Technology explains the solution.
+
+Validation proves the solution.
+
+Business Value explains why it matters.
 
 ---
 
@@ -70,21 +55,17 @@ Presenting the problem first creates context for understanding the value of the 
 
 - Government Proposals
 - NET Certification
-- Sales Sheets
-- IR Decks
+- White-label Sales Sheets
 - Conference Presentations
+- IR Decks
 - Technical Brochures
-- Website
+- Website Contents
 
 ---
 
 ## Related
 
-- Validation_Storytelling
 - AI_Workflow
-- Editorial Design
-
-
-Technology is the answer,
-
-not the beginning of the story.
+- L001_Editorial_Workflow
+- L002_Editorial_Design
+- Validation_Storytelling

@@ -254,3 +254,9 @@ One Knowledge.
 One Location.
 
 One Owner.
+
+Never assume.
+
+Read only existing files.
+
+Missing files are optional unless required by BOOT.

@@ -2,19 +2,21 @@
 
 ## Purpose
 
-Define the standard collaboration workflow for using multiple AI systems within DTAOS.
+Define the standard collaboration workflow for multiple AI systems within DTAOS.
 
-Different AI models have different strengths.
+Each AI has different strengths.
 
-The objective is to maximize overall quality by assigning each stage of the workflow to the most suitable AI.
+The objective is to maximize quality by assigning each stage of the workflow to the most suitable AI.
 
 ---
 
 ## Rule
 
-Use the best AI for each stage.
+Use the most suitable AI for each stage.
 
 Do not expect a single AI to perform every task optimally.
+
+Human review is always required before release.
 
 ---
 
@@ -30,18 +32,19 @@ Planning & Architecture
 
 ChatGPT
 
-- Problem Definition
-- Information Architecture
 - Strategy
+- Information Architecture
 - Technical Review
+- Design Direction
+- Quality Validation
 
 ↓
 
 Claude
 
 - HTML Prototype
-- Large-scale Editing
-- Long-form Generation
+- Long-form Editing
+- Large-scale Content Generation
 
 ↓
 
@@ -59,11 +62,9 @@ Release
 
 ## Why
 
-Separating responsibilities by AI capability improves quality, consistency, and productivity.
+Planning, prototyping, editing, and final production require different strengths.
 
-Prototype generation and final editorial work require different strengths.
-
-The final deliverable should always include human review.
+Using specialized AI for each stage improves quality, consistency, and productivity while reducing revision costs.
 
 ---
 
@@ -75,6 +76,7 @@ The final deliverable should always include human review.
 - Conference Presentations
 - IR Decks
 - Website Contents
+- Technical Reports
 
 ---
 
