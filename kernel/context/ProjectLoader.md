@@ -1,38 +1,27 @@
 # Project Loader
 
-Purpose
+Version: 1.0
+
+---
+
+## Purpose
 
 현재 활성 프로젝트를 복원한다.
 
 ---
 
-Load Order
+## Load Order
 
-PROJECT_CONTEXT.md
-
-↓
-
-PROJECT_STATUS.md
-
-↓
-
-DECISIONS.md
-
-↓
-
-OUTPUTS.md
-
-↓
-
-PROJECT_LOG.md
-
-↓
-
-RETROSPECTIVE.md
+1. PROJECT_CONTEXT.md
+2. PROJECT_STATUS.md
+3. DECISIONS.md
+4. OUTPUTS.md
+5. PROJECT_LOG.md
+6. RETROSPECTIVE.md
 
 ---
 
-Example
+## Example
 
 GrapheneAll
 
@@ -42,7 +31,7 @@ knowledge/cases/P001_GrapheneAll/
 
 ---
 
-Rule
+## Rule
 
 하나의 프로젝트만 Active 상태로 유지한다.
 
