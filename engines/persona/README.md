@@ -1,67 +1,65 @@
 # Adaptive Persona Engine
 
-The Adaptive Persona Engine selects only the reviewers that are relevant to the current task.
+Version: 1.0
+
+---
 
 ## Purpose
 
-Do not run all reviewers for every task. Select the most relevant 3 to 5 reviewers from the reviewer pool.
+Adaptive Persona Engine은 자료의 성격에 따라 Reviewer Pool 10명 중 관련 있는 3~5명만 선택하여 검증하는 시스템이다.
 
-## Reviewer Pool
+---
 
-| ID | Reviewer | Primary lens |
-|---|---|---|
-| P01 | Technical Evaluator | technical validity and novelty |
-| P02 | Commercialization Evaluator | market, business model, adoption |
-| P03 | CTO | technical architecture and feasibility |
-| P04 | Procurement Manager | purchase decision, supplier risk, cost |
-| P05 | Industrial Design Director | visual hierarchy, premium tone, readability |
-| P06 | Presentation Reviewer | narrative, flow, persuasion |
-| P07 | Investor / Business Developer | scalability, growth, partnership value |
-| P08 | IP / Patent Reviewer | patentability, freedom-to-operate, defensibility |
-| P09 | Quality / Manufacturing Reviewer | validation, process, production risk |
-| P10 | Red Team | objections, weak logic, credibility risks |
+## Components
 
-## Selection Rule
+ReviewerPool
 
-1. Classify the task type.
-2. Identify the target audience or evaluator.
-3. Select 3 to 5 reviewers.
-4. Assign reviewer weights.
-5. Run each review separately.
-6. Resolve conflicts.
-7. Return unified recommendations.
+↓
 
-## Default Selections
+Selector
 
-| Task type | Recommended reviewers |
-|---|---|
-| Government proposal / NET | P01, P02, P03, P10 |
-| Technical material | P01, P03, P08, P09, P10 |
-| Sales sheet / brochure | P04, P05, P07, P10 |
-| PPT / presentation | P05, P06, P07, P10 |
-| Investment decision | P02, P07, P09, P10 |
+↓
 
-## Output Format
+WeightManager
+
+↓
+
+ConflictResolver
+
+---
+
+## Execution Flow
+
+1. Dispatcher가 Task Type을 전달한다.
+2. Selector가 관련 Reviewer 3~5명을 선택한다.
+3. WeightManager가 Reviewer 가중치를 적용한다.
+4. 각 Reviewer가 독립적으로 검토한다.
+5. ConflictResolver가 충돌 의견을 정리한다.
+6. 최종 통합 의견을 생성한다.
+7. Quality Gate로 전달한다.
+
+---
+
+## Core Principle
+
+10명을 모두 호출하지 않는다.
+
+관련 있는 3~5명만 호출한다.
+
+---
+
+## Output
+
+Adaptive Persona Engine의 최종 출력은 다음 형식을 따른다.
 
 ```text
 Selected Reviewers
-- Pxx: reason
 
 Common Findings
-- ...
 
 Conflicts
-- ...
 
 Top 3 Revisions
-1. ...
-2. ...
-3. ...
 
 Unified Recommendation
-- ...
 ```
-
-## Anti-noise Rule
-
-If a reviewer is not relevant to the task, do not include that reviewer. More reviewers do not mean better review quality.
