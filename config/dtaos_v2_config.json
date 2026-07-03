@@ -1,0 +1,35 @@
+{
+  "version": "2.0",
+  "mode": "life_os_extension",
+  "core_folders": [
+    "automation",
+    "docs",
+    "knowledge",
+    "personas",
+    "prompts",
+    "skills",
+    "templates",
+    "workflows"
+  ],
+  "modules": {
+    "wealth": {
+      "status": "active",
+      "dashboard": true,
+      "decision_log": true
+    },
+    "business": {
+      "status": "planned"
+    },
+    "learning": {
+      "status": "planned"
+    },
+    "daily": {
+      "status": "planned"
+    }
+  },
+  "data_policy": {
+    "personal_data_location": "modules/",
+    "core_data_storage": "not_allowed",
+    "screenshots": "do_not_commit_by_default"
+  }
+}

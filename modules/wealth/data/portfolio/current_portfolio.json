@@ -1,0 +1,13 @@
+{
+  "date": "2026-07-02",
+  "source": "manual_screenshot",
+  "total_asset": 166732340,
+  "accounts": {
+    "general": 133654098,
+    "isa": 28364620,
+    "pension": 4713622
+  },
+  "notes": [
+    "한국코러스는 비상장 표시용이며 실질가치 0원으로 분석 제외"
+  ]
+}

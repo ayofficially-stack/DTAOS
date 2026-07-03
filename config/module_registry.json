@@ -1,0 +1,28 @@
+{
+  "modules": [
+    {
+      "id": "wealth",
+      "name": "Wealth",
+      "path": "modules/wealth",
+      "status": "active"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "path": "modules/business",
+      "status": "planned"
+    },
+    {
+      "id": "learning",
+      "name": "Learning",
+      "path": "modules/learning",
+      "status": "planned"
+    },
+    {
+      "id": "daily",
+      "name": "Daily",
+      "path": "modules/daily",
+      "status": "planned"
+    }
+  ]
+}

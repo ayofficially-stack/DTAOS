@@ -192,6 +192,23 @@ Empty References
 
 ---
 
+## Last Promotion
+
+Knowledge:
+- Winning Theory
+- Regional Strategy
+- Competitive Positioning
+
+Skill:
+- Proposal Workflow v1.1
+
+Lessons Learned:
+- P001 Sprint 1
+
+---
+
+
+
 ## Last Update
 
 2026-07-02
