@@ -1,28 +1,40 @@
 # DTAOS Dispatcher
 
-Version: 1.0
+Version: 2.0
 
 ---
 
 # Purpose
 
-Dispatcher는 DTAOS의 중앙 제어기이다.
+Dispatcher는 DTAOS의 중앙 라우팅 엔진(Central Routing Engine)이다.
 
-사용자의 요청을 분석하여
+Planner가 생성한 실행 계획을 바탕으로
 
-- 어떤 Project인지
-- 어떤 Engine을 사용할지
-- 어떤 Knowledge를 읽을지
-- 어떤 Workflow를 실행할지
-- 어떤 Persona를 선택할지를 결정한다.
+- 어떤 Project를 사용할지
+- 어떤 Context를 로드할지
+- 어떤 Engine을 실행할지
+- 어떤 Workflow를 적용할지
+- 어떤 Persona를 호출할지
 
-Dispatcher는 절대 직접 답변하지 않는다.
+를 결정한다.
+
+Dispatcher는 실행 경로(Route)를 결정하지만,
+직접 분석하거나 답변하지 않는다.
 
 ---
 
 # Execution Pipeline
 
+```text
 User Request
+
+↓
+
+Planner
+
+↓
+
+Project Registry Lookup
 
 ↓
 
@@ -34,11 +46,11 @@ Project Detection
 
 ↓
 
-Engine Selection
+Context Loading
 
 ↓
 
-Knowledge Loading
+Engine Selection
 
 ↓
 
@@ -46,7 +58,19 @@ Workflow Selection
 
 ↓
 
+Engine Orchestrator
+
+↓
+
+Analysis Synthesizer
+
+↓
+
 Adaptive Persona Engine
+
+↓
+
+Decision Engine
 
 ↓
 
@@ -55,6 +79,57 @@ Quality Gate
 ↓
 
 Final Output
+```
+
+---
+
+# Project Registry Lookup
+
+Dispatcher는 Project Detection 전에 반드시 Project Registry를 확인한다.
+
+사용자 요청에 Project ID(P001, P002...)가 포함된 경우,
+
+`config/PROJECT_REGISTRY.md`를 조회하여 프로젝트 정보를 복원한다.
+
+---
+
+## Lookup Flow
+
+```text
+User Input
+
+↓
+
+Project ID Detection
+
+↓
+
+PROJECT_REGISTRY.md
+
+↓
+
+Project Folder
+
+↓
+
+PROJECT_CONTEXT.md
+
+↓
+
+PROJECT_STATUS.md
+
+↓
+
+Dispatcher Routing
+```
+
+---
+
+## Rule
+
+- Project ID가 존재하면 Registry를 먼저 조회한다.
+- Registry에 없는 Project는 자동 생성하지 않는다.
+- Project를 찾지 못하면 사용자에게 확인을 요청한다.
 
 ---
 
@@ -62,34 +137,44 @@ Final Output
 
 ## Government
 
-예시
+Examples
 
 - NET
 - 정부과제
-- 기술수요조사서
 - 사업계획서
+- 기술수요조사서
 - RFP
 
-Engine
+Primary Engine
 
-Government Proposal Engine
+Government Engine
+
+Supporting Engines
+
+Technical Engine
+
+Business Engine
+
+Presentation Engine
 
 ---
 
 ## Sales
 
-예시
+Examples
 
-- Sales Sheet
 - White-label
-- 회사소개
-- 브로셔
+- Sales Sheet
+- Company Profile
+- Brochure
 
-Engine
+Primary Engine
 
-Design Review Engine
+Business Engine
 
-Business Review Engine
+Supporting Engines
+
+Design Engine
 
 Presentation Engine
 
@@ -97,69 +182,76 @@ Presentation Engine
 
 ## Technical
 
-예시
+Examples
 
 - Graphene
-
-- Coating
-
-- Carbide
-
 - Composite
-
+- Carbide
+- Coating
 - Textile
 
-Engine
+Primary Engine
 
-Technical Review Engine
+Technical Engine
+
+Supporting Engines
+
+Business Engine
 
 ---
 
 ## Presentation
 
-예시
+Examples
 
 - PPT
-
-- 발표
-
 - Pitch Deck
+- 발표자료
 
-Engine
+Primary Engine
 
 Presentation Engine
+
+Supporting Engines
+
+Design Engine
+
+Business Engine
 
 ---
 
 ## Decision
 
-예시
+Examples
 
 - 투자
-
-- 의사결정
-
 - 우선순위
+- 전략
 
-Engine
+Primary Engine
 
 Decision Engine
 
+Supporting Engines
+
+Business Engine
+
+Technical Engine
+
 ---
 
-# Knowledge Loading Rule
+# Context Loading Rule
 
 Dispatcher는 Repository 전체를 읽지 않는다.
 
-필요한 Knowledge만 로드한다.
+필요한 Context만 선택적으로 로드한다.
 
-예시
+---
 
-정부과제
+## Government
 
-↓
-
-skills/S001_Proposal
+```text
+skills/
 
 ↓
 
@@ -175,14 +267,14 @@ knowledge/technology
 
 ↓
 
-Active Project
+Project Context
+```
 
 ---
 
-영업자료
+## Sales
 
-↓
-
+```text
 knowledge/company
 
 ↓
@@ -191,18 +283,26 @@ knowledge/products
 
 ↓
 
+knowledge/market
+
+↓
+
+knowledge/customers
+
+↓
+
 knowledge/lessons
 
 ↓
 
-Presentation
+Project Context
+```
 
 ---
 
-기술자료
+## Technical
 
-↓
-
+```text
 knowledge/technology
 
 ↓
@@ -211,31 +311,81 @@ knowledge/products
 
 ↓
 
+knowledge/cases
+
+↓
+
 Project Context
+```
+
+---
+
+# Engine Selection Rule
+
+Dispatcher는 모든 Engine을 실행하지 않는다.
+
+Task에 필요한 Engine만 선택한다.
+
+각 Task는
+
+- Primary Engine
+- Supporting Engine
+
+으로 구성한다.
+
+선택된 Engine은 Engine Orchestrator에게 전달된다.
+
+---
+
+# Workflow Selection
+
+Dispatcher는 Task Type에 따라 Workflow를 선택한다.
+
+Examples
+
+Government
+
+↓
+
+WF001_Government
+
+Sales
+
+↓
+
+WF002_Sales
+
+Presentation
+
+↓
+
+WF003_Presentation
+
+Technical
+
+↓
+
+WF004_Technical
 
 ---
 
 # Persona Selection
 
-Dispatcher는
+Dispatcher는 Persona를 직접 선택하지 않는다.
 
-Reviewer Pool
+Adaptive Persona Engine에게 아래 정보를 전달한다.
 
-10명 중
-
-관련도가 가장 높은
-
-3~5명만 선택한다.
-
-선정 기준
-
-- Task
-
+- Task Type
 - Industry
+- Target Audience
+- Project Context
+- Selected Engines
 
-- Target
+Adaptive Persona Engine은
 
-- Purpose
+10명의 Reviewer 중
+
+3~5명을 선택한다.
 
 ---
 
@@ -245,11 +395,27 @@ Government
 
 ↓
 
-Government Proposal Engine
+Government Engine
 
 ↓
 
-Proposal Workflow
+Technical Engine
+
+↓
+
+Business Engine
+
+↓
+
+Presentation Engine
+
+↓
+
+Engine Orchestrator
+
+↓
+
+Analysis Synthesizer
 
 ↓
 
@@ -257,39 +423,75 @@ Adaptive Persona Engine
 
 ↓
 
+Decision Engine
+
+↓
+
 Quality Gate
+
+---
 
 Sales
 
 ↓
 
-Business Review
+Business Engine
 
 ↓
 
-Design Review
+Design Engine
 
 ↓
 
-Presentation
+Presentation Engine
+
+↓
+
+Engine Orchestrator
+
+↓
+
+Analysis Synthesizer
 
 ↓
 
 Adaptive Persona Engine
+
+↓
+
+Decision Engine
 
 ↓
 
 Quality Gate
 
+---
+
 Technical
 
 ↓
 
-Technical Review
+Technical Engine
+
+↓
+
+Business Engine
+
+↓
+
+Engine Orchestrator
+
+↓
+
+Analysis Synthesizer
 
 ↓
 
 Adaptive Persona Engine
+
+↓
+
+Decision Engine
 
 ↓
 
@@ -299,22 +501,35 @@ Quality Gate
 
 # Output Policy
 
-Dispatcher는
+Dispatcher는 최종 답변을 생성하지 않는다.
 
-어떤 Engine을 사용했는지
+Dispatcher는 다음 정보를 다음 Layer로 전달한다.
 
-어떤 Persona가 선택되었는지
+- Project
+- Context
+- Selected Engines
+- Workflow
+- Routing Information
 
-내부적으로만 관리한다.
-
-사용자가 요청하지 않는 한
-
-내부 동작은 노출하지 않는다.
+최종 답변 생성은 Quality Gate 이후에만 수행한다.
 
 ---
 
-# Core Principle
+# Core Principles
 
-Always route first.
+- Plan Before Route
+- Project First
+- Context Before Execution
+- Execute Only Required Engines
+- Route Before Answer
+- Never Skip Quality Gate
 
-Never answer first.
+---
+
+# Status
+
+Version : 2.0
+
+Architecture : Beta
+
+Status : Approved
