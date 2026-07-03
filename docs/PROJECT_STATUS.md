@@ -207,7 +207,23 @@ Lessons Learned:
 
 ---
 
+## Current State
 
+PLANNING
+
+READY
+
+RUNNING
+
+REVIEW
+
+BLOCKED
+
+WAITING
+
+COMPLETED
+
+ARCHIVED
 
 ## Last Update
 

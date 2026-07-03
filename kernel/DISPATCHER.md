@@ -515,6 +515,52 @@ Dispatcher는 다음 정보를 다음 Layer로 전달한다.
 
 ---
 
+
+## Evidence Card
+
+Engine이 모든 Recommendation에 대해 반드시 근거를 남긴다.
+
+### Format
+
+Finding
+
+Evidence
+
+Impact
+
+Recommendation
+
+Confidence
+
+---
+
+Example
+
+Finding
+
+Buyer Benefit 부족
+
+Evidence
+
+- 첫 페이지에 기술 설명 비중이 65%
+- 고객 가치 표현 1회
+- CTA 없음
+
+Impact
+
+구매 의사결정 지연 가능
+
+Recommendation
+
+Benefit First 구조 적용
+
+Confidence
+
+94
+
+
+---
+
 # Core Principles
 
 - Plan Before Route
