@@ -1,50 +1,320 @@
 # DTAOS Dispatcher
 
-The Dispatcher routes each request to the correct Engine, Knowledge, Workflow, and Module.
+Version: 1.0
 
-## 1. Routing Principle
+---
 
-Do not answer directly before routing. First classify the request.
+# Purpose
 
-```text
-Request
-→ Domain
-→ Active Project
-→ Required Knowledge
-→ Required Engine
-→ Required Workflow
-→ Quality Gate
-```
+Dispatcher는 DTAOS의 중앙 제어기이다.
 
-## 2. Domain Routing Table
+사용자의 요청을 분석하여
 
-| User request type | Primary Engine | Required Knowledge | Workflow |
-|---|---|---|---|
-| Government project / NET / proposal | `engines/government_proposal` | `skills/S001_Proposal`, `knowledge/certifications`, related technology | Proposal workflow |
-| Sales sheet / brochure / white-label material | `engines/design_review`, `engines/business_review` | `knowledge/company`, `knowledge/products`, `knowledge/lessons/Editorial` | Sales/PPT workflow |
-| Technical review | `engines/technical_review` | `knowledge/technology`, product-specific files | Technical review workflow |
-| Persona validation | `engines/persona` | `personas`, relevant project context | Persona review workflow |
-| Presentation / PPT / slide planning | `engines/presentation`, `engines/design_review` | Design lessons, active project case | Presentation workflow |
-| Investment / portfolio | `modules/wealth` | portfolio data, decision log | Wealth workflow |
-| Learning / exam preparation | `modules/learning` | learning module | Learning workflow |
-| Daily operating task | `modules/daily` | current state and relevant module | Daily workflow |
+- 어떤 Project인지
+- 어떤 Engine을 사용할지
+- 어떤 Knowledge를 읽을지
+- 어떤 Workflow를 실행할지
+- 어떤 Persona를 선택할지를 결정한다.
 
-## 3. GrapheneAll Default Context
+Dispatcher는 절대 직접 답변하지 않는다.
 
-When the request mentions GrapheneAll, GrapheneTex, graphene, NET, carbide, coating, government proposal, or technical sales, load context in this order:
+---
 
-1. `docs/BOOT.md`
-2. `docs/AI_LOADER.md`
-3. `kernel/README.md`
-4. Active project status from `docs/NEXT.md` and `docs/PROJECT_STATUS.md`
-5. Relevant Knowledge files only
-6. Relevant Engine
-7. Quality Gate
+# Execution Pipeline
 
-## 4. Anti-overload Rule
+User Request
 
-The Dispatcher must avoid loading the full repository unless the request is explicitly about repository audit, migration, or system refactoring.
+↓
 
-## 5. Output Rule
+Intent Analysis
 
-At the end of a routed task, the output should state the applied Engine and Workflow only when useful. For ordinary user-facing writing, do not expose internal routing unless requested.
+↓
+
+Project Detection
+
+↓
+
+Engine Selection
+
+↓
+
+Knowledge Loading
+
+↓
+
+Workflow Selection
+
+↓
+
+Adaptive Persona Engine
+
+↓
+
+Quality Gate
+
+↓
+
+Final Output
+
+---
+
+# Intent Categories
+
+## Government
+
+예시
+
+- NET
+- 정부과제
+- 기술수요조사서
+- 사업계획서
+- RFP
+
+Engine
+
+Government Proposal Engine
+
+---
+
+## Sales
+
+예시
+
+- Sales Sheet
+- White-label
+- 회사소개
+- 브로셔
+
+Engine
+
+Design Review Engine
+
+Business Review Engine
+
+Presentation Engine
+
+---
+
+## Technical
+
+예시
+
+- Graphene
+
+- Coating
+
+- Carbide
+
+- Composite
+
+- Textile
+
+Engine
+
+Technical Review Engine
+
+---
+
+## Presentation
+
+예시
+
+- PPT
+
+- 발표
+
+- Pitch Deck
+
+Engine
+
+Presentation Engine
+
+---
+
+## Decision
+
+예시
+
+- 투자
+
+- 의사결정
+
+- 우선순위
+
+Engine
+
+Decision Engine
+
+---
+
+# Knowledge Loading Rule
+
+Dispatcher는 Repository 전체를 읽지 않는다.
+
+필요한 Knowledge만 로드한다.
+
+예시
+
+정부과제
+
+↓
+
+skills/S001_Proposal
+
+↓
+
+knowledge/certifications
+
+↓
+
+knowledge/company
+
+↓
+
+knowledge/technology
+
+↓
+
+Active Project
+
+---
+
+영업자료
+
+↓
+
+knowledge/company
+
+↓
+
+knowledge/products
+
+↓
+
+knowledge/lessons
+
+↓
+
+Presentation
+
+---
+
+기술자료
+
+↓
+
+knowledge/technology
+
+↓
+
+knowledge/products
+
+↓
+
+Project Context
+
+---
+
+# Persona Selection
+
+Dispatcher는
+
+Reviewer Pool
+
+10명 중
+
+관련도가 가장 높은
+
+3~5명만 선택한다.
+
+선정 기준
+
+- Task
+
+- Industry
+
+- Target
+
+- Purpose
+
+---
+
+# Routing Table
+
+Government
+
+↓
+
+Government Proposal Engine
+
+↓
+
+Proposal Workflow
+
+↓
+
+Adaptive Persona Engine
+
+↓
+
+Quality Gate
+
+Sales
+
+↓
+
+Business Review
+
+↓
+
+Design Review
+
+↓
+
+Presentation
+
+↓
+
+Adaptive Persona Engine
+
+↓
+
+Quality Gate
+
+Technical
+
+↓
+
+Technical Review
+
+↓
+
+Adaptive Persona Engine
+
+↓
+
+Quality Gate
+
+---
+
+# Output Policy
+
+Dispatcher는
+
+어떤 Engine을 사용했는지
+
+어떤 Persona가 선택되었는지
+
+내부적으로만 관리한다.
+
+사용자가 요청하지 않는 한
+
+내부 동작은 노출하지 않는다.
+
+---
+
+# Core Principle
+
+Always route first.
+
+Never answer first.
