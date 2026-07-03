@@ -20,23 +20,23 @@ The goal of BOOT is to resume DTAOS from its latest validated state.
 
 # Current Execution State
 
-Managed by docs/NEXT.md
+Managed by NEXT.md
 
 ---
 
 # Core Documents
 
-1 docs/PRINCIPLES.md
+1 PRINCIPLES.md
 
-2 docs/ARCHITECTURE.md
+2 ARCHITECTURE.md
 
-3 docs/Specification/Documentation.md
+3 Specification/Documentation.md
 
-4 docs/Specification/Boot_Recovery.md
+4 Specification/Boot_Recovery.md
 
-5 docs/NEXT.md
+5 NEXT.md
 
-6 docs/PROJECT_STATUS.md
+6 PROJECT_STATUS.md
 
 7 README.md
 
@@ -62,13 +62,13 @@ automation/
 
 - Follow DTAOS Principles.
 - Follow current Architecture.
-- Restore the current execution state from docs/NEXT.md before reading docs/PROJECT_STATUS.md.
+- Restore the current execution state from NEXT.md before reading PROJECT_STATUS.md.
 - Do not change architecture without approval.
 - Update CHANGELOG when major changes occur.
 - Decisions override newly generated assumptions.
 - Read only existing files.
 - Never infer Resume Action.
-- Resume from docs/NEXT.md.
+- Resume from NEXT.md.
 - Load only knowledge related to the active project.
 
 ---
@@ -79,13 +79,13 @@ When starting a new AI session, use the following instruction.
 
 "DTAOS를 시작합니다.
 
-GitHub 저장소의 docs/BOOT.md를 기준으로 DTAOS를 초기화합니다.
+BOOT.md를 기준으로 DTAOS를 초기화합니다.
 
-docs/NEXT.md를 확인하여
+NEXT.md를 확인하여
 
 현재 Execution State를 복원합니다.
 
-그 이후 docs/PROJECT_STATUS.md를 확인하여
+그 이후 PROJECT_STATUS.md를 확인하여
 
 현재 프로젝트를 복원합니다. 
 
@@ -99,8 +99,8 @@ If Lessons Learned exists, it becomes part of the operating rules for the curren
 
 Recover the project state in the following order.
 
-1. Execution State (docs/NEXT.md)
-2. Project Status (docs/PROJECT_STATUS.md)
+1. Execution State (NEXT.md)
+2. Project Status
 3. Latest Decisions
 4. Latest Lessons
 5. Active Project Case
@@ -199,4 +199,4 @@ GitHub remains the Source of Truth.
 
 Status : Active
 
-Last Updated: 2026-07-03
+Last Updated: 2026-07-02
