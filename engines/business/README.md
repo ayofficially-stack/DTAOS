@@ -1,50 +1,280 @@
-# Business Review Engine
+# Business Engine
 
-The Business Review Engine evaluates whether a technology, document, or sales material can create real customer action.
+Version: 2.0
 
-## Purpose
+---
 
-Translate technology into customer need, market logic, adoption path, and revenue potential.
+# Purpose
 
-## Review Criteria
+Business Engine은 기술이 아니라 Business Value를 분석한다.
 
-| Criterion | Review question |
-|---|---|
-| Target customer | Who buys or adopts this? |
-| Pain point | What dissatisfaction or operational problem is being solved? |
-| Urgency | Why now? |
-| Differentiation | Why this solution instead of existing alternatives? |
-| Adoption path | What is the first PoC or purchase step? |
-| Revenue path | How does this convert to sales or partnership? |
-| Risk | What would stop the customer from moving forward? |
+이 Engine은
 
-## Default Reviewer Selection
+"좋은 기술인가?"
 
-Use Adaptive Persona Engine reviewers:
+가 아니라
 
-- P02 Commercialization Evaluator
-- P04 Procurement Manager
-- P07 Investor / Business Developer
-- P10 Red Team
+"고객이 구매할 이유가 있는가?"
 
-## Output Standard
+를 평가한다.
 
-Return:
+---
 
-```text
-1. Business strength
-2. Weakness or missing evidence
-3. Customer adoption risk
-4. Commercialization logic
-5. Recommended revision
-```
+# Inputs
 
-## Fail Conditions
+지원 입력
 
-Do not mark a business case as strong if:
+- Sales Sheet
+- Company Profile
+- Brochure
+- Proposal
+- White-label Material
+- Pitch Deck
 
-- target market is vague
-- customer pain is generic
-- revenue path is not explained
-- differentiation depends only on broad claims
-- PoC path is unclear
+---
+
+# Execution Pipeline
+
+Document
+
+↓
+
+Customer Analysis
+
+↓
+
+Problem Identification
+
+↓
+
+Value Proposition
+
+↓
+
+Differentiation
+
+↓
+
+Trust Elements
+
+↓
+
+Purchase Drivers
+
+↓
+
+Business Risk
+
+↓
+
+Business Score
+
+↓
+
+Recommendations
+
+---
+
+# Execution Steps
+
+## STEP 1
+
+Target Customer Analysis
+
+확인 항목
+
+- Buyer
+- Decision Maker
+- Industry
+- Purchase Stage
+
+---
+
+## STEP 2
+
+Problem Identification
+
+확인 항목
+
+- 고객 문제 정의
+- Pain Point
+- 긴급성
+- 문제의 명확성
+
+---
+
+## STEP 3
+
+Value Proposition
+
+확인 항목
+
+- 고객 가치
+- 핵심 Benefit
+- ROI
+- 경쟁 우위
+
+---
+
+## STEP 4
+
+Differentiation
+
+확인 항목
+
+- 기존 대비 차별성
+- 경쟁사 대비 강점
+- 독창성
+- 진입장벽
+
+---
+
+## STEP 5
+
+Trust Elements
+
+확인 항목
+
+- 실증 데이터
+- 고객 사례
+- 인증
+- 특허
+- 생산 능력
+
+---
+
+## STEP 6
+
+Purchase Drivers
+
+확인 항목
+
+- ROI
+- Cost Saving
+- Lead Time
+- Quality
+- Risk Reduction
+
+---
+
+## STEP 7
+
+Call To Action
+
+확인 항목
+
+- 상담 유도
+- 문의 유도
+- PoC 제안
+- Next Step
+
+---
+
+# Outputs
+
+Engine는 반드시 아래 결과를 생성한다.
+
+## Business Summary
+
+---
+
+## Buyer Perspective
+
+---
+
+## Strengths
+
+---
+
+## Weaknesses
+
+---
+
+## Business Risks
+
+---
+
+## Recommendations
+
+---
+
+## Business Score
+
+---
+
+# Metrics
+
+| Metric | Weight |
+|----------|-------:|
+| Customer Understanding | 15 |
+| Problem Definition | 15 |
+| Value Proposition | 20 |
+| Differentiation | 15 |
+| Trust | 15 |
+| Purchase Drivers | 10 |
+| CTA | 10 |
+
+Total = 100
+
+---
+
+# Failure Conditions
+
+다음 조건 중 하나라도 만족하면 FAIL
+
+- 고객 정의 없음
+- 문제 정의 불명확
+- Benefit보다 기술 설명이 많음
+- 차별성이 없음
+- 신뢰 요소 부족
+- CTA 없음
+
+---
+
+# Quality Gate
+
+Pass
+
+Conditional Pass
+
+Fail
+
+---
+
+# Related Components
+
+Dispatcher
+
+↓
+
+Context Manager
+
+↓
+
+Sales Workflow
+
+↓
+
+Reviewer
+
+↓
+
+Decision Engine
+
+↓
+
+Quality Gate
+
+---
+
+# Success Criteria
+
+좋은 영업자료는
+
+기술을 많이 설명하는 자료가 아니다.
+
+구매자가
+
+"우리도 한번 이야기해 봅시다."
+
+라고 말하게 만드는 자료이다.
