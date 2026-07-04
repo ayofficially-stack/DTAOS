@@ -49,6 +49,14 @@ User Request
 
 ↓
 
+Project Registry
+
+↓
+
+State Manager
+
+↓
+
 Planner
 
 ↓
