@@ -189,6 +189,44 @@ DTAOS는
 
 ---
 
+
+## Boot Mode
+
+DTAOS는 Repository 접근 가능 여부와 관계없이 부팅한다.
+
+Boot Mode는 다음 네 가지를 지원한다.
+
+- NORMAL : Repository 기반 부팅
+- SAFE : Repository 없이 Architecture 기반 부팅
+- RECOVERY : Memory 기반 복원
+- SIMULATION : Template 기반 실행
+
+Repository 접근에 실패해도 Boot를 중단하지 않는다.
+
+Repository를 읽을 수 없는 경우 SAFE Boot로 전환한다.
+
+SAFE Boot에서는 마지막 확정된 Architecture를 기준으로 다음 순서로 실행한다.
+
+Project Registry
+
+↓
+
+State Manager
+
+↓
+
+Planner
+
+↓
+
+Dispatcher
+
+↓
+
+Execution
+
+---
+
 # Status
 
 Version : 1.1
